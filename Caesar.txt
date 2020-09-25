@@ -1,10 +1,12 @@
-#纯零基础，不会精简了，师兄将就着看吧
+#纯零基础，不会精简了，师兄将就着看吧QAQ
+number=3
 q=input('欢迎使用凯撒密码系统，需要加密扣1，需要解密扣2：')
 w=int(q)
 if w==1:#加密
     p=input('请输入需要凯撒加密的英文：')
-    p2=input('请输入偏移量：')
-    number=int(p2)
+    p2=input('默认偏移量为3，若要更改请输入偏移量，不更改请按回车：')
+    if p2:
+        number=int(p2)
     a=[]
     for word in p:
         x=ord(word)
@@ -29,8 +31,9 @@ if w==1:#加密
             continue
 elif w==2:#解密
     p=input('请输入需要凯撒解密的英文：')
-    p2=input('请输入偏移量：')
-    number=int(p2)
+    p2=input('默认偏移量为3，若要更改请输入偏移量，不更改请按回车：')
+    if p2:
+        number=int(p2)
     a=[]
     for word in p:
         x=ord(word)
@@ -57,5 +60,5 @@ else:
     raise TypeError('''wrong number
     请重启程序''')
 c="".join(a)#用空字符串合成列表生成没有标点的字符串
-print(c)
+print('结果：'c)
 print('感谢使用凯撒密码系统')
