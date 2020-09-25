@@ -9,6 +9,9 @@ if w==1:#加密
         number=int(p2)
     a=[]
     for word in p:
+        y=word.isdigit()
+        if y==True:
+            a.append(word)
         x=ord(word)
         x=int(x)
         if 65<=x<=90:
@@ -36,6 +39,9 @@ elif w==2:#解密
         number=int(p2)
     a=[]
     for word in p:
+        y=word.isdigit()
+        if y==True:
+            a.append(word)
         x=ord(word)
         x=int(x)
         if 65<=x<=90:
