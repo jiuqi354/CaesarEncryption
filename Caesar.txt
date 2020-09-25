@@ -1,0 +1,61 @@
+#纯零基础，不会精简了，师兄将就着看吧
+q=input('欢迎使用凯撒密码系统，需要加密扣1，需要解密扣2：')
+w=int(q)
+if w==1:#加密
+    p=input('请输入需要凯撒加密的英文：')
+    p2=input('请输入偏移量：')
+    number=int(p2)
+    a=[]
+    for word in p:
+        x=ord(word)
+        x=int(x)
+        if 65<=x<=90:
+            x=x+number
+            while x>90:
+                x=x-26
+            m=chr(x)
+            a.append(m)
+        elif 32<=x<=47 or 58<=x<=64 or 91<=x<=96 or 123<=x<=126:#判断是否是标点
+            m=chr(x)
+            a.append(m)
+            continue
+        elif 97<=x<=122:
+            x=x+number
+            while x>122:
+                x=x-26
+            m=chr(x)
+            a.append(m)
+        else:
+            continue
+elif w==2:#解密
+    p=input('请输入需要凯撒解密的英文：')
+    p2=input('请输入偏移量：')
+    number=int(p2)
+    a=[]
+    for word in p:
+        x=ord(word)
+        x=int(x)
+        if 65<=x<=90:
+            x=x-number
+            while x<65:
+                x=x+26
+            m=chr(x)
+            a.append(m)
+        elif 32<=x<=47 or 58<=x<=64 or 91<=x<=96 or 123<=x<=126:#判断是否是标点
+            m=chr(x)
+            a.append(m)
+            continue
+        elif 97<=x<=122:
+            x=x-number
+            while x<97:
+                x=x+26
+            m=chr(x)
+            a.append(m)
+        else:
+            continue
+else:
+    raise TypeError('''wrong number
+    请重启程序''')
+c="".join(a)#用空字符串合成列表生成没有标点的字符串
+print(c)
+print('感谢使用凯撒密码系统')
