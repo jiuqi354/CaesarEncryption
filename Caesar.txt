@@ -60,5 +60,5 @@ else:
     raise TypeError('''wrong number
     请重启程序''')
 c="".join(a)#用空字符串合成列表生成没有标点的字符串
-print('结果：'c)
+print('结果：',c)
 print('感谢使用凯撒密码系统')
